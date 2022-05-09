@@ -1,5 +1,7 @@
 package com.dkbcodefactory.urlshortener.service
 
+import com.dkbcodefactory.urlshortener.dictionary.UrlMap
+import com.dkbcodefactory.urlshortener.urlCoder.Base64Coder
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -7,7 +9,7 @@ import kotlin.test.assertTrue
 
 internal class UrlConverterTest {
 
-    val converter = UrlConverter()
+    val converter = UrlConverter(UrlMap(), Base64Coder())
 
     @BeforeTest
     fun setUp() {
