@@ -20,7 +20,7 @@ class UrlMap: UrlDictionary {
         return key
     }
 
-    override fun getUrl(key: Int): String {
-        TODO("Not yet implemented")
+    override fun getUrl(key: Int): String? {
+        return items[key]
     }
 }

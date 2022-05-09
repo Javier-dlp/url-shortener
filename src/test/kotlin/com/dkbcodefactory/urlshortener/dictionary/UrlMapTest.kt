@@ -3,6 +3,7 @@ package com.dkbcodefactory.urlshortener.dictionary
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
+import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 internal class UrlMapTest {
@@ -14,10 +15,10 @@ internal class UrlMapTest {
         // given
         val url = "newKey"
         // when
-        val value = urlMap.getKey(url)
+        val key = urlMap.getKey(url)
         // then
-        assertNotNull(value)
-        assertTrue(value > 0)
+        assertNotNull(key)
+        assertTrue(key > 0)
     }
 
     @Test
@@ -25,11 +26,33 @@ internal class UrlMapTest {
         // given
         val url1 = "newKey"
         val url2 = "newKey"
-        val value1 = urlMap.getKey(url1)
+        val key1 = urlMap.getKey(url1)
         // when
-        val value2 = urlMap.getKey(url2)
+        val key2 = urlMap.getKey(url2)
         // then
-        assertNotNull(value2)
-        assertEquals(value1, value2)
+        assertNotNull(key2)
+        assertEquals(key1, key2)
+    }
+
+    @Test
+    fun getUrlWithUnknownKeyReturnsNull() {
+        // given
+        val key = Integer.MAX_VALUE
+        // when
+        val value = urlMap.getUrl(key)
+        // then
+        assertNull(value)
+    }
+
+    @Test
+    fun getUrlWithKnownKeyReturnsNull() {
+        // given
+        val url = "newKey"
+        val key = urlMap.getKey(url)
+        // when
+        val value = urlMap.getUrl(key)
+        // then
+        assertNotNull(value)
+        assertTrue(value.isNotEmpty())
     }
 }

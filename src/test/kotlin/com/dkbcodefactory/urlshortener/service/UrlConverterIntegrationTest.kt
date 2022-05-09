@@ -5,6 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
+import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 
@@ -42,9 +43,29 @@ internal class UrlConverterIntegrationTest {
         val url = "https://some-url.com"
         // when
         val shortUrl = converter.shorten(url)
-        println("++++++++++ ${converter.customDomain} ++++++++++")
         // then
         assertNotNull(converter.customDomain)
         assertTrue(shortUrl.startsWith(converter.customDomain))
+    }
+
+    @Test
+    fun resolvedUrlReturnsKnownUrl() {
+        // given
+        val url = "https://some-url.com"
+        val shorten = converter.shorten(url)
+        // when
+        val resolved = converter.resolve(shorten)
+        // then
+        assertEquals(url, resolved)
+    }
+
+    @Test
+    fun resolvedUrlReturnsNullForUnknownUrl() {
+        // given
+        val unknownUrl = "https://some-unknown-url.com"
+        // when
+        val resolved = converter.resolve(unknownUrl)
+        // then
+        assertNull(resolved)
     }
 }

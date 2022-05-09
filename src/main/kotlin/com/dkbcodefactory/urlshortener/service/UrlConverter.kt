@@ -16,14 +16,23 @@ class UrlConverter(
     lateinit var customDomain: String
 
     fun shorten(url: String): String {
-        LOG.debug("Shortening url $url")
+        log.debug("Shortening url $url")
         val key: Int = dictionary.getKey(url)
         val encodedKey: String = coder.encode(key)
-        LOG.debug("Url $url got shortened to $customDomain/$encodedKey")
-        return "$customDomain/$encodedKey"
+        val fullUrl = "$customDomain/$encodedKey"
+        log.debug("Url $url got shortened to $fullUrl")
+        return fullUrl
+    }
+
+    fun resolve(url: String): String? {
+        log.debug("Resolving url $url")
+        val decoded: Int? = coder.decode(url)
+        val resolved: String? = decoded?.let { dictionary.getUrl(it) }
+        log.debug("Url $url got resolved to $resolved")
+        return resolved
     }
 
     companion object {
-        private val LOG = LoggerFactory.getLogger(UrlConverter::class.java)
+        private val log = LoggerFactory.getLogger(UrlConverter::class.java)
     }
 }
