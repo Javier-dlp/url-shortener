@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "3.0.0-SNAPSHOT"
+	id("org.springframework.boot") version "2.6.7"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.6.21"
 	kotlin("plugin.spring") version "1.6.21"
@@ -15,6 +15,7 @@ repositories {
 	mavenCentral()
 	maven { url = uri("https://repo.spring.io/milestone") }
 	maven { url = uri("https://repo.spring.io/snapshot") }
+	maven { url = uri("https://clojars.org/repo/") }
 }
 
 dependencies {
@@ -22,6 +23,8 @@ dependencies {
 	implementation("org.springframework:spring-web")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("nio:nio:1.0.4")
+	testImplementation(kotlin("test"))
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
