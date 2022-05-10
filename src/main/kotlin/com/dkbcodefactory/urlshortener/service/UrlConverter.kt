@@ -26,11 +26,16 @@ class UrlConverter(
 
     fun resolve(url: String): String? {
         log.debug("Resolving url $url")
-        val decoded: Int? = coder.decode(url)
+        val key: String = extractKey(url)
+        val decoded: Int? = coder.decode(key)
         val resolved: String? = decoded?.let { dictionary.getUrl(it) }
         log.debug("Url $url got resolved to $resolved")
         return resolved
     }
+
+    private fun extractKey(url: String): String = url.removePrefix(customDomain)
+        .removePrefix("/")
+        .removeSuffix("/")
 
     companion object {
         private val log = LoggerFactory.getLogger(UrlConverter::class.java)
