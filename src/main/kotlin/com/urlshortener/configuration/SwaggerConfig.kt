@@ -1,4 +1,4 @@
-package com.dkbcodefactory.urlshortener.configuration
+package com.urlshortener.configuration
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -14,7 +14,7 @@ class SwaggerConfig {
     fun api(): Docket {
         return Docket(DocumentationType.SWAGGER_2)
             .select()
-            .apis(RequestHandlerSelectors.basePackage("com.dkbcodefactory.urlshortener"))
+            .apis(RequestHandlerSelectors.basePackage("com.urlshortener"))
             .paths(PathSelectors.any())
             .build()
     }

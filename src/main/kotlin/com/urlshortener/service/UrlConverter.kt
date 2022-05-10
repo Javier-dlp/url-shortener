@@ -1,7 +1,7 @@
-package com.dkbcodefactory.urlshortener.service
+package com.urlshortener.service
 
-import com.dkbcodefactory.urlshortener.dictionary.UrlDictionary
-import com.dkbcodefactory.urlshortener.urlCoder.UrlCoder
+import com.urlshortener.dictionary.UrlDictionary
+import com.urlshortener.urlCoder.UrlCoder
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service

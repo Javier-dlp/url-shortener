@@ -1,4 +1,4 @@
-package com.dkbcodefactory.urlshortener.dictionary
+package com.urlshortener.dictionary
 
 interface UrlDictionary {
     fun getKey(url: String): Int

@@ -1,6 +1,6 @@
-package com.dkbcodefactory.urlshortener.controller
+package com.urlshortener.controller
 
-import com.dkbcodefactory.urlshortener.service.UrlConverter
+import com.urlshortener.service.UrlConverter
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam

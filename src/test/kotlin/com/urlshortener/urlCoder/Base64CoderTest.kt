@@ -1,4 +1,4 @@
-package com.dkbcodefactory.urlshortener.urlCoder
+package com.urlshortener.urlCoder
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

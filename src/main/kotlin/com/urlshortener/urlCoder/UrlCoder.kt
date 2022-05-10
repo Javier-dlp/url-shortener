@@ -1,4 +1,4 @@
-package com.dkbcodefactory.urlshortener.urlCoder
+package com.urlshortener.urlCoder
 
 interface UrlCoder {
     fun encode(key: Int): String

@@ -1,4 +1,4 @@
-package com.dkbcodefactory.urlshortener.dictionary
+package com.urlshortener.dictionary
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

@@ -1,4 +1,4 @@
-package com.dkbcodefactory.urlshortener
+package com.urlshortener
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

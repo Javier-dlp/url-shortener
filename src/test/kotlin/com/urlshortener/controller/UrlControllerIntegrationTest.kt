@@ -1,4 +1,4 @@
-package com.dkbcodefactory.urlshortener.controller
+package com.urlshortener.controller
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest

@@ -1,4 +1,4 @@
-package com.dkbcodefactory.urlshortener.dictionary
+package com.urlshortener.dictionary
 
 import org.springframework.stereotype.Component
 import java.util.*

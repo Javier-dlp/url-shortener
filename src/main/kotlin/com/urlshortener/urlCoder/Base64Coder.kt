@@ -1,4 +1,4 @@
-package com.dkbcodefactory.urlshortener.urlCoder
+package com.urlshortener.urlCoder
 
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
