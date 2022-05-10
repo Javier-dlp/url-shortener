@@ -1,3 +1,3 @@
 com:
   dkbcodefactory:
-    domainName: https://MyDomain.com
+    domainName: ${DOMAIN_NAME:https://MyDomain.com}
