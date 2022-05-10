@@ -1,3 +1,7 @@
 com:
   dkbcodefactory:
     domainName: ${DOMAIN_NAME:https://MyDomain.com}
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
